@@ -1,0 +1,52 @@
+# depslib dependency file v1.0
+1624559035 source:c:\users\user\desktop\proyectomascotas\linkedlist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+
+1560446930 c:\users\user\desktop\proyectomascotas\linkedlist.h
+
+1624651117 source:c:\users\user\desktop\proyectomascotas\main.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"validaciones.h"
+	"Controller.h"
+
+1624651000 source:c:\users\user\desktop\proyectomascotas\validaciones.c
+	"validaciones.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1624651040 c:\users\user\desktop\proyectomascotas\validaciones.h
+
+1624658006 source:c:\users\user\desktop\proyectomascotas\controller.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"mascota.h"
+	"parser.h"
+	"validaciones.h"
+	"Controller.h"
+
+1624573490 c:\users\user\desktop\proyectomascotas\controller.h
+
+1624663580 source:c:\users\user\desktop\proyectomascotas\mascota.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"mascota.h"
+
+1624663397 c:\users\user\desktop\proyectomascotas\mascota.h
+
+1624663183 source:c:\users\user\desktop\proyectomascotas\parser.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"mascota.h"
+
+1624566490 c:\users\user\desktop\proyectomascotas\parser.h
+
