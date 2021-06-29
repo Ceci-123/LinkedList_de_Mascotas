@@ -5,36 +5,37 @@
 
 int parser_FromText(FILE* pFile, LinkedList* pArrayLista)
 {
-    eMascota* pMascota;
-    char idChar[21];
-    char nombre[21];
-    char edadChar[21];
-    char pesoChar[21];
-    char sexo;
-    char raza[21];
-    char auxiliar[120];
-    int idNum;
-    int edadNum;
-    float pesoNum;
+    eMascota* pMascota = NULL;
+    char auxNombre[128];
+    char auxSexo[3];
+    char auxRaza[21];
+    char auxId[21];
+    char auxEdad[21];
+    char auxPeso[21];
+    int retorno = 0;
 
     if(pFile != NULL && pArrayLista != NULL)
     {
-        fscanf(pFile,"%s\n", auxiliar);  //lectura fantasma del encabezado
+        //lectura fantasma del encabezado
+        fscanf(pFile,"%s\n",auxNombre);
+
         while(!feof(pFile))
         {
-             printf("Entre en el while del parser");
-             system("pause");
-             fscanf(pFile,"%[^,],%[^,],%[^,],%[^,],%[^,],%[^\n]\n",&idChar,nombre,&edadChar,&pesoChar,&sexo,raza);
-             idNum = atoi(idChar);
-             edadNum = atoi(edadChar);
-             pesoNum = atof(pesoChar);
-             pMascota = mascota_newParametros(&idNum,nombre,&edadNum,&pesoNum, &sexo, raza);
+           if(fscanf(pFile,"%[^,],%[^,],%[^,],%[^,],%[^,],%[^\n] \n",auxId,auxNombre,auxEdad,auxPeso,auxSexo,auxRaza) == 6)
+           {
+               pMascota = mascota_newParametros(auxId, auxNombre,auxEdad, auxPeso,auxSexo,auxRaza);
+               ll_add(pArrayLista,pMascota);
 
-             ll_add(pArrayLista,pMascota);
+           }
+            else
+            {
+                break;
+            }
         }
+        retorno = 1;
     }
 
-    return 1;
+    return retorno;
 }
 
 int parser_FromBinary(FILE* pFile, LinkedList* pArrayLista)

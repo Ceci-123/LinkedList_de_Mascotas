@@ -3,20 +3,28 @@
 #include <string.h>
 #include "mascota.h"
 
-eMascota* mascota_newParametros(int* id, char* nombre, int* edad, float* peso,char* sexo,char* raza)
+
+eMascota* mascota_newParametros(char* idStr, char* nombreStr, char* edadStr, char* pesoStr,char* sexoStr,char* razaStr)
 {
-    eMascota* pMascota;
-    pMascota = mascota_new();
+    int flag = 0;
+    eMascota* pMascota = mascota_new();
 
     if(pMascota != NULL)
     {
-        mascota_setId(pMascota, *id);
-        mascota_setNombre(pMascota, nombre);
-        mascota_setEdad(pMascota, *edad);
-        mascota_setPeso(pMascota, *peso);
-        mascota_setSexo(pMascota, *sexo);
-        mascota_setRaza(pMascota, raza);
-
+        if(mascota_setId(pMascota, atoi(idStr)) == 1 &&
+           mascota_setNombre(pMascota, nombreStr)==1 &&
+           mascota_setEdad(pMascota, atoi(edadStr))==1 &&
+           mascota_setPeso(pMascota, atof(pesoStr))==1 &&
+           mascota_setSexo(pMascota,sexoStr[0])==1 &&
+           mascota_setRaza(pMascota, razaStr)==1)
+           {
+               flag = 1;
+           }
+        if(flag == 0)
+        {
+            printf("Ocurrio un error al inicializar la mascota");
+            system("pause");
+        }
     }
     return pMascota;
 }
@@ -70,7 +78,7 @@ int mascota_setRaza(eMascota* pMascota,char* raza)
 int mascota_setSexo(eMascota* pMascota,char sexo)
 {
     int todoOk= 0;
-    if(pMascota !=NULL && (sexo == 'm') || (sexo =='f' ))
+    if(pMascota !=NULL)
     {
        pMascota->sexo = sexo;
        todoOk = 1;
@@ -288,7 +296,7 @@ int mascota_CompareBySexo(eMascota* m1, eMascota* m2)
     }
 
     }
-        //resultado = strcmp(m1->sexo, m2->sexo);
+
     return resultado;
 }
 
@@ -301,4 +309,22 @@ int mascota_CompareByRaza(eMascota* m1, eMascota* m2)
         resultado = strcmp(m1->raza, m2->raza);
     }
     return resultado;
+}
+
+int contadorPerrosAdultos(void* elemento)
+{
+    int todoOk = 0;
+    eMascota* pMascota = NULL;
+    pMascota = (eMascota*)elemento;
+    int edad;
+    int contadorAdultos = 0;
+    mascota_getEdad(pMascota, &edad);
+
+    if(edad >= 5){
+        todoOk = 1;
+        contadorAdultos ++;
+    }
+    printf("hay %d perros adultos", contadorAdultos);
+    system("pause");
+    return todoOk;
 }

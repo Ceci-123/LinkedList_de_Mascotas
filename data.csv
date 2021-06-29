@@ -1,5 +1,7 @@
 id,nombre,edad,peso,sexo,raza
-100,morena,3,2.000000,f,boxer
-101,milo,5,3.000000,m,callejero
-102,ceci,4,3.000000,f,humana
-103,sami,5,4.000000,f,humana
+101,morena,10,30.000000,f,boxer
+100,lady,5,10.000000,f,caniche
+104,bonnie,6,30.000000,f,doberman
+103,monty,2,3.000000,m,gato
+105,malena,18,34.000000,f,perra bonita
+102,milo,6,25.000000,m,perro bonito

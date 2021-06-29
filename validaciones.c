@@ -19,14 +19,15 @@ int menuOpciones()
     printf("7  Ordenar \n");
     printf("8  Guardar los datos en el archivo .csv (modo texto).\n");
     printf("9. Guardar los datos en el archivo .bin (modo binario).\n");
-    printf("10.Salir \n");
+    printf("10. Mapeo \n");
+    printf("11. Salir \n");
     printf("---------------------------------------------------------------------------\n");
     printf("---------------------------------------------------------------------------\n");
     printf("\nIngrese Una Opcion: ");
     fflush(stdin);
     gets(ingreso);
     opcion = atoi(ingreso);
-    opcion = validacionDeNumero(opcion,1,10);
+    opcion = validacionDeNumero(opcion,1,11);
     return opcion;
 }
 

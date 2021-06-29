@@ -19,7 +19,7 @@ int main()
     for(;;)
     {
 
-        if(opcion==10)
+        if(opcion==11)
         {
             opcion = obtenerNumero("Desea salir ? 1.SI // 2. NO");
             if(opcion==1) break;
@@ -116,6 +116,17 @@ int main()
         else
         {
             printf("Error en el guardado del archivo\n");
+        }
+        break;
+    case 10:
+        resultado = controller_map(miLista);
+        if(resultado == 1)
+        {
+           printf("Archivo mapeado con exito\n");
+        }
+        else
+        {
+            printf("Error en el mapeado del archivo\n");
         }
         break;
     }

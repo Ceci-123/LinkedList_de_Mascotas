@@ -207,7 +207,7 @@ int controller_edit(LinkedList* pArrayLista)
     controller_List(pArrayLista);
     while(indice == -1)
     {
-        id = obtenerNumero("\nIngrese el id del empleado que quiere modificar");
+        id = obtenerNumero("\nIngrese el id de la mascota que quiere modificar");
         indice = controller_getIndexById(pArrayLista,id);
         if(indice == -1)
         {
@@ -488,3 +488,12 @@ int controller_saveAsBinary(char* path, LinkedList* pArrayLista)
 
     return auxiliarRetorno;
 }
+
+int controller_map(LinkedList* pArrayLista)
+{
+    int todoOk = 0;
+
+    return todoOk;
+}
+
+
