@@ -81,7 +81,14 @@ int controller_saveAsText(char* path , LinkedList* pArrayListEmployee);
  **/
 int controller_saveAsBinary(char* path , LinkedList* pArrayListEmployee);
 
-/** \brief Llama a la funcion para que realize una modificacion a los elementos de la lista
+/** \brief Llama a la funcion filter
+ *
+ * \param Puntero del tipo LinkedList a la lista
+ * \return Un entero, 1 en caso de exito o 0 si hubo error
+ **/
+int controller_filter(LinkedList* pArrayLista);
+
+/** \brief Llama a la funcion map
  *
  * \param Puntero del tipo LinkedList a la lista
  * \return Un entero, 1 en caso de exito o 0 si hubo error

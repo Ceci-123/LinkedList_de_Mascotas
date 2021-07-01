@@ -184,30 +184,38 @@ int mascota_getRaza(eMascota* pMascota,char* raza)
 
 }
 
-int mascota_CompareByName(eMascota* m1, eMascota* m2)
+int mascota_CompareByName(void* m1, void* m2)
 {
     int resultado;
+    eMascota* auxiliar1 = NULL;
+    eMascota* auxiliar2 = NULL;
 
     if(m1 != NULL && m2 != NULL)
     {
-        resultado = strcmp(m1->nombre, m2->nombre);
+        auxiliar1 = (eMascota*) m1;
+        auxiliar2 = (eMascota*) m2;
+        resultado = strcmp(auxiliar1->nombre, auxiliar2->nombre);
     }
     return resultado;
 }
 
-int mascota_CompareByEdad(eMascota* m1, eMascota* m2)
+int mascota_CompareByEdad(void* m1, void* m2)
 {
     int resultado;
+    eMascota* auxiliar1 = NULL;
+    eMascota* auxiliar2 = NULL;
 
     if(m1 != NULL && m2 != NULL)
     {
-       if(m1->edad > m2->edad)
+        auxiliar1 = (eMascota*) m1;
+        auxiliar2 = (eMascota*) m2;
+       if(auxiliar1->edad > auxiliar2->edad)
     {
         resultado = 1;
     }
     else
     {
-        if(m1->edad < m2->edad)
+        if(auxiliar1->edad < auxiliar2->edad)
         {
             resultado = -1;
         }
@@ -221,19 +229,23 @@ int mascota_CompareByEdad(eMascota* m1, eMascota* m2)
    return resultado;
 }
 
-int mascota_CompareById(eMascota* m1, eMascota* m2)
+int mascota_CompareById(void* m1, void* m2)
 {
     int resultado;
+    eMascota* auxiliar1 = NULL;
+    eMascota* auxiliar2 = NULL;
 
     if(m1 != NULL && m2 != NULL)
     {
-       if(m1->id > m2->id)
+        auxiliar1 = (eMascota*) m1;
+        auxiliar2 = (eMascota*) m2;
+       if(auxiliar1->id > auxiliar2->id)
     {
         resultado = 1;
     }
     else
     {
-        if(m1->id < m2->id)
+        if(auxiliar1->id < auxiliar2->id)
         {
             resultado = -1;
         }
@@ -247,19 +259,23 @@ int mascota_CompareById(eMascota* m1, eMascota* m2)
    return resultado;
 }
 
-int mascota_CompareByPeso(eMascota* m1, eMascota* m2)
+int mascota_CompareByPeso(void* m1, void* m2)
 {
     int resultado;
+    eMascota* auxiliar1 = NULL;
+    eMascota* auxiliar2 = NULL;
 
     if(m1 != NULL && m2 != NULL)
     {
-       if(m1->peso > m2->peso)
+       auxiliar1 = (eMascota*) m1;
+       auxiliar2 = (eMascota*) m2;
+       if(auxiliar1->peso > auxiliar2->peso)
     {
         resultado = 1;
     }
     else
     {
-        if(m1->peso < m2->peso)
+        if(auxiliar1->peso < auxiliar2->peso)
         {
             resultado = -1;
         }
@@ -273,19 +289,23 @@ int mascota_CompareByPeso(eMascota* m1, eMascota* m2)
    return resultado;
 }
 
-int mascota_CompareBySexo(eMascota* m1, eMascota* m2)
+int mascota_CompareBySexo(void* m1, void* m2)
 {
     int resultado;
+    eMascota* auxiliar1 = NULL;
+    eMascota* auxiliar2 = NULL;
 
     if(m1 != NULL && m2 != NULL)
     {
-       if(m1->sexo > m2->sexo)
+       auxiliar1 = (eMascota*) m1;
+       auxiliar2 = (eMascota*) m2;
+       if(auxiliar1->sexo > auxiliar2->sexo)
     {
         resultado = 1;
     }
     else
     {
-        if(m1->sexo < m2->sexo)
+        if(auxiliar1->sexo < auxiliar2->sexo)
         {
             resultado = -1;
         }
@@ -300,13 +320,17 @@ int mascota_CompareBySexo(eMascota* m1, eMascota* m2)
     return resultado;
 }
 
-int mascota_CompareByRaza(eMascota* m1, eMascota* m2)
+int mascota_CompareByRaza(void* m1, void* m2)
 {
     int resultado;
+    eMascota* auxiliar1 = NULL;
+    eMascota* auxiliar2 = NULL;
 
     if(m1 != NULL && m2 != NULL)
     {
-        resultado = strcmp(m1->raza, m2->raza);
+        auxiliar1 = (eMascota*) m1;
+        auxiliar2 = (eMascota*) m2;
+        resultado = strcmp(auxiliar1->raza, auxiliar2->raza);
     }
     return resultado;
 }
@@ -327,4 +351,53 @@ int contadorPerrosAdultos(void* elemento)
     printf("hay %d perros adultos", contadorAdultos);
     system("pause");
     return todoOk;
+}
+
+int filterCachorros(void* pElement)
+{
+    int retorno = 0;
+    eMascota* auxiliar = NULL;
+    auxiliar = (eMascota*) pElement;
+    if(auxiliar->edad < 10)
+    {
+        retorno = 1;
+    }
+    return retorno;
+}
+
+int filterHembras(void* pElement)
+{
+    int retorno = 0;
+    eMascota* auxiliar = NULL;
+    auxiliar = (eMascota*) pElement;
+    if(auxiliar->sexo == 'h')
+    {
+        retorno = 1;
+    }
+    return retorno;
+}
+
+int filterBunny(void* pElement)
+{
+    int retorno = 0;
+    eMascota* auxiliar = NULL;
+    auxiliar = (eMascota*) pElement;
+    if(!strcmp(auxiliar->nombre,"Bunny")  )
+    {
+        retorno = 1;
+    }
+    return retorno;
+}
+
+int funcionDeMapeo(void* pElement)
+{
+    int retorno = 0;
+    eMascota* auxiliar = NULL;
+    auxiliar = (eMascota*) pElement;
+    if(auxiliar->edad > 2)
+    {
+      auxiliar->edad = 19;
+      retorno = 1;
+    }
+    return retorno;
 }

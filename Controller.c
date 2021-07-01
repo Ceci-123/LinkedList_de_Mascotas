@@ -489,11 +489,38 @@ int controller_saveAsBinary(char* path, LinkedList* pArrayLista)
     return auxiliarRetorno;
 }
 
-int controller_map(LinkedList* pArrayLista)
+int controller_filter(LinkedList* pArrayLista)
 {
     int todoOk = 0;
+
+    if(pArrayLista != NULL)
+    {
+        if(controller_List(ll_filter(pArrayLista, filterCachorros)))
+        {
+            todoOk = 1;
+            //controller_saveAsText("archivoFiltrado.csv",ll_map(pArrayLista, filterCachorros));
+        }
+
+    }
 
     return todoOk;
 }
 
+int controller_map(LinkedList* pArrayLista)
+{
+    int todoOk = 0;
+
+    if(pArrayLista != NULL)
+    {
+        if(controller_List(ll_map(pArrayLista, funcionDeMapeo)))
+        {
+            todoOk = 1;
+            //controller_saveAsText("archivoMapeado.csv",ll_map(pArrayLista, funcionDeMapeo));
+        }
+
+    }
+
+    return todoOk;
+
+}
 

@@ -42,6 +42,7 @@ int parser_FromBinary(FILE* pFile, LinkedList* pArrayLista)
 {
     eMascota* pMascota;
     int devolucionFread;
+    int retorno = 0;
 
     fseek(pFile,33,SEEK_SET);
     while(!feof(pFile))
@@ -53,7 +54,7 @@ int parser_FromBinary(FILE* pFile, LinkedList* pArrayLista)
             break;
         }
         ll_add(pArrayLista,pMascota);
-
+        retorno = 1;
     }
-    return 1;
+    return retorno;
 }

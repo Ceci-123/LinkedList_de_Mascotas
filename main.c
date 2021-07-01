@@ -119,14 +119,15 @@ int main()
         }
         break;
     case 10:
-        resultado = controller_map(miLista);
+        resultado = controller_map(miLista);   //controller_filter(miLista);
+
         if(resultado == 1)
         {
-           printf("Archivo mapeado con exito\n");
+           printf("Archivo filtrado con exito\n");
         }
         else
         {
-            printf("Error en el mapeado del archivo\n");
+            printf("Error en el filtrado del archivo\n");
         }
         break;
     }

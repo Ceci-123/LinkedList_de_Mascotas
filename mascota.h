@@ -127,59 +127,66 @@ int mascota_getId(eMascota* pMascota,int* id);
 
 /** \brief Compara el campo nombre de ambas estructuras mascota y devuelve el resultado
  *
- * \param  Puntero a la primer mascota
- * \param  Puntero a la segunda mascota
+ * \param  Puntero a void, para la primer mascota
+ * \param  Puntero a void, para la segunda mascota
  * \return Un entero, si las cadenas son iguales retornara un valor 0, si la primera cadena es mayor
  *         retornara un valor positivo y si es menor retornara un valor negativo.
  **/
-int mascota_CompareByName(eMascota* m1, eMascota* m2);
+int mascota_CompareByName(void* m1, void* m2);
 
 /** \brief Compara el campo edad de ambas estructuras mascota y devuelve el resultado
  *
- * \param Puntero a la primer mascota
- * \param Puntero a la segunda mascota
+ * \param Puntero a void para la primer mascota
+ * \param Puntero a void para la segunda mascota
  * \return Un entero, devuelve 1(si el primero es mayor que el segundo),
  *        -1 (si el primero es menor que el segundo) o 0 si son iguales
  **/
-int mascota_CompareByEdad(eMascota* m1, eMascota* m2);
+int mascota_CompareByEdad(void* m1, void* m2);
 
 /** \brief Compara el campo id de ambas estructuras mascota y devuelve el resultado
  *
- * \param Puntero a la primer mascota
- * \param Puntero a la segunda mascota
+ * \param Puntero a void, para la primer mascota
+ * \param Puntero a void, para la segunda mascota
  * \return Un entero, devuelve 1(si el primero es mayor que el segundo),
  *        -1 (si el primero es menor que el segundo) o 0 si son iguales
  **/
-int mascota_CompareById(eMascota* m1, eMascota* m2);
+int mascota_CompareById(void* m1, void* m2);
 
 /** \brief Compara el campo peso de ambas estructuras mascota y devuelve el resultado
  *
- * \param Puntero a la primer mascota
- * \param Puntero a la segunda mascota
+ * \param Puntero a void, para la primer mascota
+ * \param Puntero a void, para la segunda mascota
  * \return Un entero, devuelve 1(si el primero es mayor que el segundo),
  *        -1 (si el primero es menor que el segundo) o 0 si son iguales
  **/
-int mascota_CompareByPeso(eMascota* m1, eMascota* m2);
+int mascota_CompareByPeso(void* m1, void* m2);
 
 /** \brief Compara el campo sexo de ambas estructuras mascota y devuelve el resultado
  *
- * \param Puntero a la primer mascota
- * \param Puntero a la segunda mascota
+ * \param Puntero a void, para la primer mascota
+ * \param Puntero a void, para la segunda mascota
  * \return Un entero, devuelve 1(si el primero es mayor que el segundo),
  *        -1 (si el primero es menor que el segundo) o 0 si son iguales
  **/
-int mascota_CompareBySexo(eMascota* m1, eMascota* m2);
+int mascota_CompareBySexo(void* m1, void* m2);
 
 /** \brief Compara el campo raza de ambas estructuras mascota y devuelve el resultado
  *
- * \param  Puntero a la primer mascota
- * \param  Puntero a la segunda mascota
+ * \param  Puntero a void, para la primer mascota
+ * \param  Puntero a void, para la segunda mascota
  * \return Un entero, si las cadenas son iguales retornara un valor 0, si la primera cadena es mayor
  *         retornara un valor positivo y si es menor retornara un valor negativo.
  **/
-int mascota_CompareByRaza(eMascota* m1, eMascota* m2);
-
+int mascota_CompareByRaza(void* m1, void* m2);
 
 int contadorPerrosAdultos(void* elemento);
+
+int filterCachorros(void* pElement);
+
+int filterHembras(void* pElement);
+
+int filterBunny(void* pElement);
+
+int funcionDeMapeo(void* pElement);
 
 #endif // MASCOTA_H_INCLUDED

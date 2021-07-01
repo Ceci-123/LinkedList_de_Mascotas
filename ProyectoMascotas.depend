@@ -1,20 +1,20 @@
 # depslib dependency file v1.0
-1624921285 source:c:\users\user\desktop\proyectomascotas\linkedlist.c
+1625147309 source:c:\users\user\desktop\proyectomascotas\linkedlist.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"LinkedList.h"
 
-1624843279 c:\users\user\desktop\proyectomascotas\linkedlist.h
+1625145990 c:\users\user\desktop\proyectomascotas\linkedlist.h
 
-1624810305 source:c:\users\user\desktop\proyectomascotas\main.c
+1625146432 source:c:\users\user\desktop\proyectomascotas\main.c
 	<stdio.h>
 	<stdlib.h>
 	"LinkedList.h"
 	"validaciones.h"
 	"Controller.h"
 
-1624806587 source:c:\users\user\desktop\proyectomascotas\validaciones.c
+1625105108 source:c:\users\user\desktop\proyectomascotas\validaciones.c
 	"validaciones.h"
 	<stdio.h>
 	<stdlib.h>
@@ -22,7 +22,7 @@
 
 1624843207 c:\users\user\desktop\proyectomascotas\validaciones.h
 
-1624921615 source:c:\users\user\desktop\proyectomascotas\controller.c
+1625146825 source:c:\users\user\desktop\proyectomascotas\controller.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -32,17 +32,17 @@
 	"validaciones.h"
 	"Controller.h"
 
-1624967685 c:\users\user\desktop\proyectomascotas\controller.h
+1625145578 c:\users\user\desktop\proyectomascotas\controller.h
 
-1624966705 source:c:\users\user\desktop\proyectomascotas\mascota.c
+1625147336 source:c:\users\user\desktop\proyectomascotas\mascota.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"mascota.h"
 
-1624967446 c:\users\user\desktop\proyectomascotas\mascota.h
+1625146316 c:\users\user\desktop\proyectomascotas\mascota.h
 
-1624966843 source:c:\users\user\desktop\proyectomascotas\parser.c
+1625084561 source:c:\users\user\desktop\proyectomascotas\parser.c
 	<stdio.h>
 	<stdlib.h>
 	"LinkedList.h"
